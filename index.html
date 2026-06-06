@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupos VIPs</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #ad0000 0%, #5a0000 40%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+  }
+
+  /* Hexagon pattern overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='92' viewBox='0 0 80 92'%3E%3Cpolygon points='40,2 78,22 78,62 40,82 2,62 2,22' fill='none' stroke='%23ff000022' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 80px 92px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow: 0 0 60px #ad000066, 0 0 120px #ad000033;
+  }
+
+  /* ── BANNER ── */
+  .banner-wrap {
+    width: 100%;
+    line-height: 0;
+    position: relative;
+  }
+
+  .banner-wrap img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* overlay gradient at bottom of banner */
+  .banner-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #1a1a1a);
+  }
+
+  /* ── INFO SECTION ── */
+  .info {
+    background: #1e1e22;
+    padding: 22px 24px 26px;
+  }
+
+  .info-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  /* Desktop: side-by-side layout */
+  .info-body {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .features {
+    flex: 1;
+    list-style: none;
+  }
+
+  .features li {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .features li::before {
+    content: '✓';
+    color: #ff2222;
+    font-weight: 900;
+    font-size: 12px;
+  }
+
+  /* ── BUTTON ── */
+  .btn-wrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 24px #cc000088;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 32px #cc0000bb;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 500px) {
+    body { padding: 12px; }
+
+    .card { border-radius: 12px; }
+
+    .info { padding: 18px 16px 22px; }
+
+    .info-title {
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .info-body {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .features { width: 100%; }
+
+    .features li {
+      font-size: 11px;
+      justify-content: center;
+    }
+
+    .btn-wrap { width: 100%; }
+
+    .btn {
+      width: 100%;
+      font-size: 13px;
+      padding: 15px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Banner image -->
+  <div class="banner-wrap">
+    <img
+      src="https://raw.githubusercontent.com/hottelegram/banners/refs/heads/main/bannercarrd.png"
+      alt="Grupos VIPs Banner"
+    >
+  </div>
+
+  <!-- Info + CTA -->
+  <div class="info">
+    <p class="info-title">Tenha acesso a mais de 10 mil mídias especiais</p>
+    <div class="info-body">
+      <ul class="features">
+        <li>Mais de 15 categorias</li>
+        <li>Acesso vitalício</li>
+        <li>Atualizações todos os dias</li>
+        <li>Suporte humanizado</li>
+        <li>Privacidade total</li>
+      </ul>
+      <div class="btn-wrap">
+        <a href="#" class="btn">
+          🔒 👑 Acessar Agora 👑
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
