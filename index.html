@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Verificação de Acesso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,7 +13,7 @@
     }
 
     body {
-      background: #e9ebee;  /* fundo neutro tipo Facebook antigo */
+      background: #121212;  /* fundo escuro estilo TikTok */
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       display: flex;
       align-items: center;
@@ -22,123 +22,124 @@
       padding: 20px;
     }
 
-    /* Container central - responsivo */
-    .fb-card {
+    /* Container central - estilo TikTok */
+    .tt-card {
       max-width: 500px;
       width: 100%;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      background: #1a1a1a;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
       overflow: hidden;
       transition: all 0.2s ease;
     }
 
-    /* Cabeçalho estilo Facebook */
-    .fb-header {
-      background: #1877f2;  /* azul Facebook */
-      padding: 20px 24px;
+    /* Cabeçalho estilo TikTok */
+    .tt-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      padding: 24px 24px;
       text-align: center;
+      border-bottom: 1px solid #2a2a2a;
     }
 
-    /* Logo do Facebook (ícone f + "Facebook") */
-    .fb-logo {
+    /* Logo do TikTok */
+    .tt-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      color: white;
-      font-weight: 700;
+      gap: 10px;
+      color: #ffffff;
+      font-weight: 800;
       font-size: 28px;
       letter-spacing: -0.5px;
     }
 
-    .fb-logo svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
+    .tt-logo svg {
+      width: 34px;
+      height: 34px;
     }
 
     /* Corpo do card */
-    .fb-body {
-      padding: 32px 28px 40px;
+    .tt-body {
+      padding: 36px 28px 40px;
       text-align: center;
     }
 
     .check-icon {
-      background: #42b72a;  /* verde aprovação */
-      width: 64px;
-      height: 64px;
+      background: linear-gradient(135deg, #00f2ea, #ff0050);
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(0, 242, 234, 0.3);
     }
 
     .check-icon svg {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       stroke: white;
       stroke-width: 2;
     }
 
     h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1b1f23;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
       margin-bottom: 12px;
+      letter-spacing: -0.3px;
     }
 
     .desc {
       font-size: 16px;
       line-height: 1.5;
-      color: #4b5563;
+      color: #b0b0b0;
       margin-bottom: 32px;
     }
 
-    /* Botão azul Facebook */
-    .fb-btn {
+    /* Botão estilo TikTok */
+    .tt-btn {
       display: inline-block;
-      background: #1877f2;
+      background: linear-gradient(135deg, #00f2ea, #ff0050);
       color: white;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 17px;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 14px 28px;
+      border-radius: 40px;
       text-decoration: none;
       width: 100%;
       max-width: 280px;
       text-align: center;
       transition: 0.2s;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 242, 234, 0.3);
       border: none;
       cursor: pointer;
     }
 
-    .fb-btn:hover {
-      background: #166fe5;
-      transform: scale(1.01);
+    .tt-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4);
     }
 
-    .fb-btn:active {
-      background: #0e5fd1;
+    .tt-btn:active {
       transform: scale(0.98);
     }
 
-    /* Rodapé com selo de segurança */
-    .fb-footer {
-      background: #f7f8fa;
+    /* Rodapé */
+    .tt-footer {
+      background: #111111;
       padding: 14px 20px;
       text-align: center;
       font-size: 12px;
-      color: #6c757d;
-      border-top: 1px solid #e4e6eb;
+      color: #6c6c6c;
+      border-top: 1px solid #262626;
     }
 
     /* Responsivo */
     @media (max-width: 520px) {
-      .fb-body {
-        padding: 24px 20px 32px;
+      .tt-body {
+        padding: 28px 20px 32px;
       }
       h2 {
         font-size: 22px;
@@ -146,37 +147,44 @@
       .desc {
         font-size: 14px;
       }
-      .fb-btn {
+      .tt-btn {
         font-size: 16px;
         padding: 12px 20px;
       }
-      .fb-header {
-        padding: 16px 20px;
+      .tt-header {
+        padding: 18px 20px;
       }
-      .fb-logo {
+      .tt-logo {
         font-size: 24px;
       }
-      .fb-logo svg {
+      .tt-logo svg {
         width: 28px;
         height: 28px;
+      }
+      .check-icon {
+        width: 60px;
+        height: 60px;
+      }
+      .check-icon svg {
+        width: 30px;
+        height: 30px;
       }
     }
 
     @media (max-width: 420px) {
-      .fb-body {
-        padding: 20px 16px 28px;
+      .tt-body {
+        padding: 24px 16px 28px;
       }
       .check-icon {
         width: 52px;
         height: 52px;
       }
       .check-icon svg {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
       }
     }
 
-    /* Remove destaque de link */
     a {
       text-decoration: none;
     }
@@ -184,18 +192,18 @@
 </head>
 <body>
 
-<div class="fb-card">
-  <div class="fb-header">
-    <div class="fb-logo">
-      <!-- Ícone Facebook SVG oficial (simples) -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325v21.351C0 23.407 0.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c0.732 0 1.325-0.593 1.325-1.325V1.325C24 0.593 23.407 0 22.675 0z"/>
+<div class="tt-card">
+  <div class="tt-header">
+    <div class="tt-logo">
+      <!-- Logo TikTok SVG oficial -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 1.1.21V9.51a6.35 6.35 0 0 0-1.1-.09A6.3 6.3 0 0 0 5.06 15.6a6.3 6.3 0 0 0 6.32 6.32 6.3 6.3 0 0 0 6.32-6.32V9.51a7.46 7.46 0 0 0 4.3 1.42V7.51a4.83 4.83 0 0 1-2.41-.82z" fill="white"/>
       </svg>
-      <span>Facebook</span>
+      <span>TikTok</span>
     </div>
   </div>
 
-  <div class="fb-body">
+  <div class="tt-body">
     <div class="check-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="20 6 9 17 4 12"></polyline>
@@ -206,19 +214,18 @@
       Seu acesso foi validado com sucesso.<br>
       Clique no botão abaixo para seguir para o próximo passo.
     </p>
-    <a href="https://gqr.sh/nELd" class="fb-btn" id="continueBtn">Continuar →</a>
+    <a href="#" class="tt-btn" id="continueBtn">Continuar →</a>
   </div>
-  <div class="fb-footer">
+  <div class="tt-footer">
     🔒 Conexão segura • Verificação em tempo real
   </div>
 </div>
 
 <script>
-  // Redirecionamento apenas no clique do usuário – Facebook não rastreia destinos após clique manual
+  // Redirecionamento apenas no clique do usuário
   document.getElementById('continueBtn').addEventListener('click', function(e) {
     e.preventDefault();
     // ⚠️ SUBSTITUA PELO SEU LINK REAL (site Hot ou Telegram) APENAS NO ARQUIVO FINAL
-    // Para testes: alert('Redirecionaria para o destino');
     window.location.href = 'https://seu-proximo-passo.com';
   });
 </script>
